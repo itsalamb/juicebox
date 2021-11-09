@@ -1,6 +1,6 @@
 const express = require('express');
 const postsRouter = express.Router();
-const {getAllPosts, createPost, getPostById} = require('../db');
+const {getAllPosts, createPost, getPostById, updatePost} = require('../db');
 const { requireUser} = require('./utils')
 
 
@@ -11,12 +11,21 @@ postsRouter.use((req, res, next) => {
 });
 
 
-postsRouter.get('/', async (req, res)=> {
-    const posts = await getAllPosts();
-    res.send({
-        posts
-    })
-})
+postsRouter.get('/', async (req, res) => {
+  try{
+      const allPosts = await getAllPosts();
+
+      const posts = allPosts.filter(post => {
+          return post.active || (req.user && post.author.id === req.user.id);
+      });
+
+      res.send({
+          posts
+      });
+  } catch ({ name, message }) {
+      next({ name, message })
+  }
+});
 
 postsRouter.post('/', requireUser, async (req, res, next) => {
   const { title, content, tags = "" } = req.body;
