@@ -10,7 +10,7 @@ usersRouter.use((req, res, next) => {
   next();
 });
 
-
+// api/users/
 usersRouter.get('/', async (req, res)=> {
     const users = await getAllUsers();
 
@@ -19,6 +19,7 @@ usersRouter.get('/', async (req, res)=> {
     })
 })
 
+// api/users/login
 usersRouter.post('/login', async (req, res, next) => {
   const { username, password } = req.body;
 
@@ -49,6 +50,7 @@ usersRouter.post('/login', async (req, res, next) => {
   }
 });
 
+// api/users/register
 usersRouter.post('/register', async (req, res, next) => {
   const { username, password, name, location } = req.body;
 
