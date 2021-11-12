@@ -13,7 +13,7 @@ const AllPosts = () => {
         },
     })
     const data = await resp.json();
-    console.log('this is the data', data);
+    // console.log('this is the data', data);
     setPosts(data.posts);
   }
   fetchPosts();

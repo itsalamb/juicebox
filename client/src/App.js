@@ -4,6 +4,7 @@ import { Route, NavLink, BrowserRouter as Router, Switch } from 'react-router-do
 import Create from "./components/Create.js"
 import Login from './components/Login';
 import AllPosts from './components/AllPosts.js';
+import Register from './components/Register.js';
 
 const App = () => {
 
@@ -28,21 +29,21 @@ const App = () => {
               <Route path="/Login">
                 <Login />
               </Route>
-              {/* <Route path="/Register">
+              <Route path="/Register">
                 <Register />
               </Route>
-              <Route path="/Create">
-                <Create />
-              </Route>
-              <Route path="/post/edit/:postId" >
-                <Update />
-              </Route>
-              <Route path="/MyPosts">
-                <MyPosts />
-              </Route>
-              <Route path="/MyPosts/:postId/messgaes">
-                <Messages />
-              </Route> */}
+              {/* // <Route path="/Create">
+              //   <Create />
+              // </Route>
+              // <Route path="/post/edit/:postId" >
+              //   <Update />
+              // </Route>
+              // <Route path="/MyPosts">
+              //   <MyPosts />
+              // </Route>
+              // <Route path="/MyPosts/:postId/messgaes">
+              //   <Messages />
+              // </Route>  */}
             </Switch>
           </div>
         </div>

@@ -14,14 +14,13 @@ const Login = ({}) => {
                 'Content-type': 'Application/json',
             },
             body: JSON.stringify({
-            user:{
                 username,
                 password,
-            }
             })
         });
         const data = await response.json();
-        localStorage.setItem('token', data.data.token);
+        console.log('this is the date', data)
+        localStorage.setItem('token', data.token);
         history.push('/home')
     }
 
