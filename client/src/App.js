@@ -32,18 +32,16 @@ const App = () => {
               <Route path="/Register">
                 <Register />
               </Route>
-              {/* // <Route path="/Create">
-              //   <Create />
-              // </Route>
-              // <Route path="/post/edit/:postId" >
-              //   <Update />
-              // </Route>
-              // <Route path="/MyPosts">
-              //   <MyPosts />
-              // </Route>
-              // <Route path="/MyPosts/:postId/messgaes">
-              //   <Messages />
-              // </Route>  */}
+               <Route path="/Create">
+                  <Create />
+               </Route>
+              {/* <Route path="/post/edit/:postId" >
+                <Update />
+              </Route>
+              <Route path="/MyPosts">
+                <MyPosts />
+              </Route>
+                */}
             </Switch>
           </div>
         </div>
